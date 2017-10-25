@@ -62,10 +62,8 @@
                 background: #fff;
                 border-radius: 100%;
                 opacity: .2;
-
                 transform: scale(0);
             }
-
             @keyframes ripple {
                 0% {
                     transform: scale(0);
@@ -78,17 +76,14 @@
                     transform: scale(1);
                 }
             }
-
             button:not(:active):after {
                 animation: ripple 2.5s ease-out;
             }
-
             /* fixes initial animation run, without user input, on page load.
             */
             button:after {
                 visibility: hidden;
             }
-
             button:focus:after {
                 visibility: visible;
             }
@@ -107,5 +102,19 @@
         <button class="item">Funcionario</button><br>
         <button class="item">Reserva</button><br>
     </div>
+	<?php
+$servername = "localhost";
+$username = "root";
+$password = "22561801";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?>
 </body>
 </html>
