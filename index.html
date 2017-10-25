@@ -1,94 +1,111 @@
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Pub</title>
+    <style>
+            body{
+                background-color: #fbfbfa;
+            }
+            .menu{
+                margin: auto;
+                margin-top: 50px;
+                padding: 40px;
+                width: 500px;
+                height: 540px;
+                background-color: #fdfdfd;
+                box-shadow: 0px 1px 4px 0px #999;
+                text-align: center;
+            }
+            .item{
+                margin: auto;
+                margin-top: 20px;
+                padding: 4px;
+                width: 320px;
+                height: 44px;
+                border-radius: 4px;
+                border: 0px;
+                background-color: #33bb55;
+                font-family: "Montserrat", Times, serif;
+                color: #fefefe;
+                outline:0;
+                
+                font-size: 18px;
+                letter-spacing: 1px;
+                transition: .3s;
+                /*box-shadow: inset 0 0 0 5em rgba(255,255,255,0.2);*/
+                box-shadow: 0px 1px 2px 0px #999;
+                transition: box-shadow 0.8s;
+                list-style-type:none;
+                display:inline-block;
+                line-height:2em;
+                color:#fff;
+                position:relative;
+                overflow:hidden;
+                transition: 0.2s;
+            }
+            button {
+                position: relative;
+                overflow: hidden;
+                padding: 16px 32px;
+            }
+            button:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 420px;
+                height: 420px;
+                margin-left: -210px;
+                margin-top: -210px;
+                /*background: #3f51b5;*/
+                background: #fff;
+                border-radius: 100%;
+                opacity: .2;
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <title>Bar/Restaurante</title>
-  <style>
-    .alinhamento{
-      text-align: center;
-    }
-    .button{
-    position.absolute;
-    padding: 5px;
-    top: 50%
-      }
-</style>
-  </head>
-  <!-- cabecalho inicio -->
-  <header></header>
-  <!-- cabecalho fim -->
-  <body>
-    <div class="alinhamento">
-      <h1>Menu Principal</h1>
-      <h2>Selecione uma opcao!</h2><br>
-    </div>
-    <!-- inicio da tab -->
-                        <div class="container">
-                            <ul class="nav nav-tabs">
-                              <li class="active"><a href="#">Menu Principal</a></li>&nbsp;
-                              <li class="dropdown">
-                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reservas<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                  <li><a href="#">Reservar Mesa</a></li>
-                                  <li><a href="#">Remover Reserva</a></li>
-                                  <li><a href="#">Verificar Reservas/a></li>                        
-                                </ul>
-                              </li>
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Funcionarios<span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">Adicionar Funcionarios</a></li>
-                                  <li><a href="#">Remover Funcioanrios</a></li>
-                                  <li><a href="#">Verificar funcionarios</a></li>                        
-                                </ul>
-                              </li>&nbsp;
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Produtos<span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">Adicionar Produto</a></li>
-                                  <li><a href="#">Remover produto</a></li>
-                                  <li><a href="#">Listar Produtos</a></li>                        
-                                </ul>
-                              </li>&nbsp;
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Cliente<span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">Cadastrar Cliente</a></li>
-                                  <li><a href="#">Remover Cadastro de Cliente</a></li>
-                                  <li><a href="#">Listar Clientes</a></li>                        
-                                </ul>
-                              </li>&nbsp;
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Comandas<span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#">Listar Comandas Abertas</a></li>
-                                  <li><a href="#">Listar Comandas Fechadas</a></li>
-                                </ul>
-                              </li>&nbsp;
-                          </ul>
-                    </div>
-                    <!-- final da tab -->
-    <!-- lista de butoes -->
-    <div class="alinhamento">
-      <div class="dropdown">
-      <!-- butao drop down de reservas-->
-      <form action="https:google.com.br" class="button btn-primary btn-block">
-        <input type="submit" value="Reservas">
-      </form><br>
-      <button class="button btn-primary btn-block">Funcionarios</button><br>
-      <button class="button btn-primary btn-block">Produtos</button><br>
-      <button class="button btn-primary btn-block">Cliente</button><br>
-      <button class="button btn-primary btn-block">Comandas</button><br>
-    </div>
-    </div>
+                transform: scale(0);
+            }
 
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </body>
-  <!-- rodape -->
-  <footer></footer>
+            @keyframes ripple {
+                0% {
+                    transform: scale(0);
+                }
+                20% {
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(1);
+                }
+            }
+
+            button:not(:active):after {
+                animation: ripple 2.5s ease-out;
+            }
+
+            /* fixes initial animation run, without user input, on page load.
+            */
+            button:after {
+                visibility: hidden;
+            }
+
+            button:focus:after {
+                visibility: visible;
+            }
+            .item:hover, .botao:focus{
+                background-color: #33cc55;
+                box-shadow: 0px 4px 2px 0px #999;
+                /*border-radius: 50%;*/
+            }
+            
+    </style>
+</head>
+<body>
+	<div class="menu">
+        <button class="item">Compra</button><br>
+        <button class="item">Produto</button><br>
+        <button class="item">Funcionario</button><br>
+        <button class="item">Reserva</button><br>
+    </div>
+</body>
 </html>
