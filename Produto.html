@@ -1,6 +1,7 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
     <title>Pub</title>
     <style>
             body{
@@ -12,47 +13,107 @@
                 padding: 40px;
                 width: 500px;
                 height: 540px;
+                border-radius: 4px;
                 background-color: #fdfdfd;
-                box-shadow: 0px 1px 4px 0px #999;
+                box-shadow: 0px 2px 4px 0px #999;
                 text-align: center;
             }
             .search{
                 margin: auto;
-                width: 320px;
+                width: 500px;
                 height: 44px;
                 padding: 4px;
                 border: 1px;
                 border-radius: 4px;
+                background-color: #fefefe;
                 box-shadow: 0px 1px 2px 0px #999;
                 font-family: "Montserrat", Times, serif;
             }
             .search:hover{
-                box-shadow: 0px 2px 4px 0px #999;
+                box-shadow: 0px 1px 3px 0px #999;
             }
             .entre{
                 float: left;
                 margin: auto;
-                width: 260px;
+                width: 480px;
                 height: 100%;
                 padding: 16px;
                 border: 0px;
                 outline: 0px;
-                border-radius: 4px;
-
+                background-color: transparent;
                 color: #666;
+				font-size: 18px;
                 font-family: "Montserrat", Times, serif;
             }
-            #pesquisa{
-                float: left;
-                height: 80%;
+			.linha{
+                margin-top: 40px;
+                margin-left: -40px;
+                width: 580px;
+                height: 1px;
+                background-color: #aeaeae;
+			}
+			table, th, td {
+				width: 500px;
+                padding: 8px;
+				border: 0px;
+				border-collapse: collapse;
+				color: #666;
+                text-align: left;
+				font-size: 14px;
+                font-family: "Roboto", serif;
+				font-weight: 100;
+                transition: 1s;
+			}
+			table{
+				margin-top: 40px;
+                box-shadow: 0px 1px 3px 0px #aaa;
+			}
+			th{
+				height: 36px;
+				border: 0px solid #119911;
+				background-color: #33bb55;
+				color: #fefefe;
+				font-size: 18px;
+				text-align: center;
+				font-style: thin;
+                letter-spacing: 1px;
+			}
+			td{
+				border: 0px;
+				border-bottom: 1px solid #ddd;
+			    text-align: center;
+                letter-spacing: 1px;
+			}
+            tr{
+                transition: .3s;
+            }
+            tr:not(:first-child):hover{
+                box-shadow: 0px 1px 10px 0px #aaa;
+            }
+            td:hover{
+                text-shadow: 0px 1px #ccc;
+            }
+            .entab{
+                margin: auto;
+                width: 100%;
+                height: 50%;
                 padding: 4px;
-                padding-left: 10px;
-                border-left: 1px solid #ccc;
-                opacity: 0.7;
+                padding-top: 14px;
+                padding-bottom: 14px;
+                border: 0px;
+                outline: 0px;
+                background-color: transparent;
+				text-align: center;
+                color: #eee;
+				font-size: 18px;
+                font-family: "Montserrat", Times, serif;
+            }
+            .entab:focus{
+                border-bottom: 2px solid #eee;
             }
             .item{
                 margin: auto;
-                margin-top: 20px;
+                margin-top: 40px;
                 padding: 4px;
                 width: 320px;
                 height: 44px;
@@ -127,12 +188,16 @@
                 visibility: visible;
             }
             .item:hover, .botao:focus{
-                background-color: #33cc55;
-                box-shadow: 0px 4px 2px 0px #999;
+                background-color: #33bf45;
+                box-shadow: 0px 1px 2px 0px #999;
                 /*border-radius: 50%;*/
             }
             ::-webkit-input-placeholder, select.first-child { /* WebKit, Blink, Edge */
                 color: #aaa;
+            }
+            .entab::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                color: #fff;
+                opacity: 0.7;
             }
             
     </style>
@@ -141,9 +206,26 @@
 	<div class="menu">
         <div   class="search">
             <input class="entre" placeholder="Pesquise aqui..."></input>
-            <img id="pesquisa" src="search.png"></img>
         </div>
-        <button class="item">Produto</button><br>
+		<div class="linha" align='center'></div>
+		<table class="tabela">
+			<tr>
+				<th><input class="entab" placeholder="Produto"></input></th>
+				<th><input class="entab" placeholder="Preco"></input></th> 
+				<th><input class="entab" placeholder="Quantidade"></input></th>
+			</tr>
+			<tr>
+				<td>Batatas Fritas Médias</td>
+				<td>30,00</td> 
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>Batatas Fritas Supremas</td>
+				<td>50,00</td> 
+				<td>20</td>
+			</tr>
+		</table>
+        <button class="item">Adicionar Produto</button><br>
     </div>
 </body>
 </html>
