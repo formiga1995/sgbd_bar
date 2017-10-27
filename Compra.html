@@ -13,7 +13,7 @@
                 padding: 40px;
                 width: 500px;
                 height: 540px;
-                border-radius: 4px;
+                border-radius: 0px;
                 background-color: #fdfdfd;
                 box-shadow: 0px 2px 4px 0px #999;
                 text-align: center;
@@ -64,6 +64,7 @@
                 color: #666;
 				font-size: 18px;
                 font-family: "Montserrat", Times, serif;
+                transition: 0.2s;
 			}
 			.campos{
                 margin-top: 40px;
@@ -77,7 +78,12 @@
                 color: #666;
 				font-size: 18px;
                 font-family: "Montserrat", Times, serif;
+                transition: 0.2s;
 			}
+            .campo:focus, .campos:focus{
+				width: 490px;
+				border-bottom: 3px solid #224499;
+            }
             .infor{
                 margin-top: 10px;
                 width: 480px;
@@ -143,9 +149,6 @@
                 0% {
                     transform: scale(0);
                 }
-                20% {
-                    transform: scale(1);
-                }
                 100% {
                     opacity: 0;
                     transform: scale(1);
@@ -153,7 +156,7 @@
             }
 
             button:not(:active):after {
-                animation: ripple 2.5s ease-out;
+                animation: ripple 1.0s ease-out;
             }
 
             /* fixes initial animation run, without user input, on page load.
@@ -165,9 +168,9 @@
             button:focus:after {
                 visibility: visible;
             }
-            .item:hover, .botao:focus{
-                background-color: #33bf45;
-                box-shadow: 0px 2px 2px 0px #999;
+            .item:hover, .item:focus{
+                background-color: #44cc65;
+                box-shadow: 0px 2px 12px 0px #999;
                 /*border-radius: 50%;*/
             }
             ::-webkit-input-placeholder, select:first-child { /* WebKit, Blink, Edge */
@@ -177,20 +180,20 @@
     </style>
 </head>
 <body>
-	<div class="menu">
+	<div class="menu" style:"text-align:center">
         <div   class="search">
             <input class="entre" placeholder="Pesquise aqui..."></input>
         </div>
 		<div class="linha" align='center'></div>
 		<div>
-			<select class="campos" placeholder="Produto">
+			<select class="campos" placeholder="Produto" >
 				<option hidden>Produto...</option>
 			</select>
 			<select class="campos" placeholder="Comanda">
 				<option hidden>Comanda...</option>
 			</select>
 			<input class="campo" placeholder="Quantidade"></input>
-			<div class="infor">Preço: R$145,86</div>
+			<div class="infor">Preï¿½o: R$145,86</div>
 		</div>
         <button class="item">Confirmar Compra</button><br>
     </div>
