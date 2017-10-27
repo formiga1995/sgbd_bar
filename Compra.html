@@ -1,0 +1,198 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <title>Compra</title>
+    <style>
+            body{
+                background-color: #fbfbfa;
+            }
+            .menu{
+                margin: auto;
+                margin-top: 50px;
+                padding: 40px;
+                width: 500px;
+                height: 540px;
+                border-radius: 4px;
+                background-color: #fdfdfd;
+                box-shadow: 0px 2px 4px 0px #999;
+                text-align: center;
+            }
+            .search{
+                margin: auto;
+                width: 500px;
+                height: 44px;
+                padding: 4px;
+                border: 1px;
+                border-radius: 4px;
+                background-color: #fefefe;
+                box-shadow: 0px 1px 2px 0px #999;
+                font-family: "Montserrat", Times, serif;
+            }
+            .search:hover{
+                box-shadow: 0px 1px 3px 0px #999;
+            }
+            .entre{
+                float: left;
+                margin: auto;
+                width: 480px;
+                height: 100%;
+                padding: 16px;
+                border: 0px;
+                outline: 0px;
+                background-color: transparent;
+                color: #666;
+				font-size: 18px;
+                font-family: "Montserrat", Times, serif;
+            }
+			.linha{
+                margin-top: 40px;
+                margin-left: -40px;
+                width: 580px;
+                height: 1px;
+                background-color: #ccc;
+			}
+			.campo{
+                margin-top: 40px;
+				width: 500px;
+				height: 44px;
+                padding: 16px;
+                outline: 0px;
+				border: 0px;
+				border-bottom: 2px solid #ccc;
+                background-color: transparent;
+                color: #666;
+				font-size: 18px;
+                font-family: "Montserrat", Times, serif;
+			}
+			.campos{
+                margin-top: 40px;
+				width: 500px;
+				height: 44px;
+                padding-left: 16px;
+                outline: 0px;
+				border: 0px;
+				border-bottom: 2px solid #ccc;
+                background-color: transparent;
+                color: #666;
+				font-size: 18px;
+                font-family: "Montserrat", Times, serif;
+			}
+            .infor{
+                margin-top: 10px;
+                width: 480px;
+                padding: 16px;
+                border: 0px;
+                outline: 0px;
+                background-color: transparent;
+                color: #666;
+				font-size: 24px;
+                font-family: "Montserrat", Times, serif;
+            }
+            .item{
+                margin: auto;
+                margin-top: 40px;
+                padding: 4px;
+                width: 320px;
+                height: 44px;
+                border-radius: 4px;
+                border: 0px;
+                background-color: #33bb55;
+                font-family: "Montserrat", Times, serif;
+                color: #fefefe;
+                outline:0;
+                
+                font-size: 18px;
+                letter-spacing: 1px;
+                transition: .3s;
+                /*box-shadow: inset 0 0 0 5em rgba(255,255,255,0.2);*/
+                box-shadow: 0px 1px 2px 0px #999;
+                transition: box-shadow 0.8s;
+                list-style-type:none;
+                display:inline-block;
+                line-height:2em;
+                color:#fff;
+                position:relative;
+                overflow:hidden;
+                transition: 0.2s;
+            }
+            button {
+                position: relative;
+                overflow: hidden;
+                padding: 16px 32px;
+            }
+            button:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 420px;
+                height: 420px;
+                margin-left: -210px;
+                margin-top: -210px;
+                /*background: #3f51b5;*/
+                background: #fff;
+                border-radius: 100%;
+                opacity: .2;
+
+                transform: scale(0);
+            }
+
+            @keyframes ripple {
+                0% {
+                    transform: scale(0);
+                }
+                20% {
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(1);
+                }
+            }
+
+            button:not(:active):after {
+                animation: ripple 2.5s ease-out;
+            }
+
+            /* fixes initial animation run, without user input, on page load.
+            */
+            button:after {
+                visibility: hidden;
+            }
+
+            button:focus:after {
+                visibility: visible;
+            }
+            .item:hover, .botao:focus{
+                background-color: #33bf45;
+                box-shadow: 0px 2px 2px 0px #999;
+                /*border-radius: 50%;*/
+            }
+            ::-webkit-input-placeholder, select:first-child { /* WebKit, Blink, Edge */
+                color: #aaa;
+            }
+            
+    </style>
+</head>
+<body>
+	<div class="menu">
+        <div   class="search">
+            <input class="entre" placeholder="Pesquise aqui..."></input>
+        </div>
+		<div class="linha" align='center'></div>
+		<div>
+			<select class="campos" placeholder="Produto">
+				<option hidden>Produto...</option>
+			</select>
+			<select class="campos" placeholder="Comanda">
+				<option hidden>Comanda...</option>
+			</select>
+			<input class="campo" placeholder="Quantidade"></input>
+			<div class="infor">Preço: R$145,86</div>
+		</div>
+        <button class="item">Confirmar Compra</button><br>
+    </div>
+</body>
+</html>
