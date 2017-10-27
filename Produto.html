@@ -2,7 +2,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-    <title>Compra</title>
+    <title>Pub</title>
     <style>
             body{
                 background-color: #fbfbfa;
@@ -50,44 +50,66 @@
                 margin-left: -40px;
                 width: 580px;
                 height: 1px;
-                background-color: #ccc;
+                background-color: #aeaeae;
 			}
-			.campo{
-                margin-top: 40px;
+			table, th, td {
 				width: 500px;
-				height: 44px;
-                padding: 16px;
-                outline: 0px;
+                padding: 8px;
 				border: 0px;
-				border-bottom: 2px solid #ccc;
-                background-color: transparent;
-                color: #666;
-				font-size: 18px;
-                font-family: "Montserrat", Times, serif;
+				border-collapse: collapse;
+				color: #666;
+                text-align: left;
+				font-size: 14px;
+                font-family: "Roboto", serif;
+				font-weight: 100;
+                transition: 1s;
 			}
-			.campos{
-                margin-top: 40px;
-				width: 500px;
-				height: 44px;
-                padding-left: 16px;
-                outline: 0px;
+			table{
+				margin-top: 40px;
+                box-shadow: 0px 1px 3px 0px #aaa;
+			}
+			th{
+				height: 36px;
+				border: 0px solid #119911;
+				background-color: #33bb55;
+				color: #fefefe;
+				font-size: 18px;
+				text-align: center;
+				font-style: thin;
+                letter-spacing: 1px;
+			}
+			td{
 				border: 0px;
-				border-bottom: 2px solid #ccc;
-                background-color: transparent;
-                color: #666;
-				font-size: 18px;
-                font-family: "Montserrat", Times, serif;
+				border-bottom: 1px solid #ddd;
+			    text-align: center;
+                letter-spacing: 1px;
 			}
-            .infor{
-                margin-top: 10px;
-                width: 480px;
-                padding: 16px;
+            tr{
+                transition: .3s;
+            }
+            tr:not(:first-child):hover{
+                box-shadow: 0px 1px 10px 0px #aaa;
+            }
+            td:hover{
+                text-shadow: 0px 1px #ccc;
+            }
+            .entab{
+                margin: auto;
+                width: 100%;
+                height: 50%;
+                padding: 4px;
+                padding-top: 14px;
+                padding-bottom: 14px;
                 border: 0px;
                 outline: 0px;
                 background-color: transparent;
-                color: #666;
-				font-size: 24px;
+				text-align: center;
+                color: #eee;
+				font-size: 18px;
                 font-family: "Montserrat", Times, serif;
+            }
+            .entab:focus{
+                border-bottom: 2px solid #eee;
             }
             .item{
                 margin: auto;
@@ -135,10 +157,8 @@
                 background: #fff;
                 border-radius: 100%;
                 opacity: .2;
-
                 transform: scale(0);
             }
-
             @keyframes ripple {
                 0% {
                     transform: scale(0);
@@ -151,48 +171,69 @@
                     transform: scale(1);
                 }
             }
-
             button:not(:active):after {
                 animation: ripple 2.5s ease-out;
             }
-
             /* fixes initial animation run, without user input, on page load.
             */
             button:after {
                 visibility: hidden;
             }
-
             button:focus:after {
                 visibility: visible;
             }
             .item:hover, .botao:focus{
                 background-color: #33bf45;
-                box-shadow: 0px 2px 2px 0px #999;
+                box-shadow: 0px 1px 2px 0px #999;
                 /*border-radius: 50%;*/
             }
-            ::-webkit-input-placeholder, select:first-child { /* WebKit, Blink, Edge */
+            ::-webkit-input-placeholder, select.first-child { /* WebKit, Blink, Edge */
                 color: #aaa;
+            }
+            .entab::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                color: #fff;
+                opacity: 0.7;
             }
             
     </style>
 </head>
 <body>
+
+<?php  //Isso aqui tá só pra dar o select, mas tem que alterar o html pra mostrar de acordo com o resultado da consulta
+
+    		include 'conectar.php';
+
+        $consulta_produto     =   "SELECT NOME, QNT_ESTOQUE, PRECO
+                                 FROM PROUDUTO";
+
+        $resultado_consulta = mysqli_query($db, $consulta_produto);
+       
+       echo '<label>' $resultado_consulta '</label>';
+
+    	?>
 	<div class="menu">
         <div   class="search">
             <input class="entre" placeholder="Pesquise aqui..."></input>
         </div>
 		<div class="linha" align='center'></div>
-		<div>
-			<select class="campos" placeholder="Produto">
-				<option hidden>Produto...</option>
-			</select>
-			<select class="campos" placeholder="Comanda">
-				<option hidden>Comanda...</option>
-			</select>
-			<input class="campo" placeholder="Quantidade"></input>
-			<div class="infor">Pre�o: R$145,86</div>
-		</div>
-        <button class="item">Confirmar Compra</button><br>
+		<table class="tabela">
+			<tr>
+				<th><input class="entab" placeholder="Produto"></input></th>
+				<th><input class="entab" placeholder="Preco"></input></th> 
+				<th><input class="entab" placeholder="Quantidade"></input></th>
+			</tr>
+			<tr>
+				<td>Batatas Fritas Médias</td>
+				<td>30,00</td> 
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>Batatas Fritas Supremas</td>
+				<td>50,00</td> 
+				<td>20</td>
+			</tr>
+		</table>
+        <button class="item">Adicionar Produto</button><br>
     </div>
 </body>
 </html>

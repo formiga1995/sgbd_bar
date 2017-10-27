@@ -1,10 +1,10 @@
 <?php
-  $servername = "127.0.0.1";  //Seleciona o servidor
-  $username = "Sepultura";  //O nome do lixo
-  $password = " "; //A senha do servidor
+  $servername = "localhost";  //Seleciona o servidor
+  $username = "root";  //O nome do lixo
+  $password = "22561801"; //A senha do servidor
 
   // Cria a porcaria da conexão
-  $conn = mysqli_connect($servername, $username);
+  $conn = mysqli_connect($servername, $username, $password);
 
   // Checa a conexão e pode encerrar esse lixo
   if (!$conn) {
