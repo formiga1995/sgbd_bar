@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="estilocompra.css">
+    <link rel="stylesheet" type="text/css" href="css\estilocompra.css">
     <title>Compra</title>
 </head>
 <body>
@@ -80,6 +80,7 @@
             </div>
 		</div>
         <button class="item">Confirmar Compra</button><br>
+        <button class="item" onclick="window.location.href='\index.html'">Voltar</button>
     </div>
     <script>
         function functionone(){
