@@ -17,6 +17,25 @@
 		<div>
 			<select class="campos" placeholder="Produto">
 				<option hidden>Produto...</option>
+                <?php  //Isso aqui tá só pra dar o select, mas tem que alterar o html pra mostrar de acordo com o resultado da consulta
+
+                            include 'conectar.php';
+                        //$database = new $conn;
+                        //$db = ;
+                        $consulta_produto     =   "SELECT NOME, MARCA PRODUTO";
+
+                        //$resultado_consulta = mysqli_query($conn, $consulta_produto);
+                       $result = $conn->query($consulta_produto);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo "<option>".$row["MARCA"]." - ".$row["NOME"]."</option>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+                ?>  
 			</select>
 			<select class="campos" placeholder="Comanda">
 				<option hidden>Comanda...</option>
