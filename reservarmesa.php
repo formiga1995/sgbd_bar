@@ -49,7 +49,7 @@
         }
         ?>
         </table>
-        <button class="item" onclick="window.location.href='\ssss.html'">Reservar mesa</button><br>
+        <button class="item" onclick="on()">Reservar Mesa</button><br>
         <button class="item" onclick="window.location.href='\index.html'">Voltar</button>
 
     </div>
