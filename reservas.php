@@ -35,10 +35,10 @@
         
         include 'conectar.php';
         if(isset($_POST['adicionar'])){
-        $sql = "INSERT INTO reserva (ID_MESA, ID_MESA, DATA_HORA_RESERVA)
+        $sql = "INSERT INTO reserva (ID_CLIENTE, ID_MESA, DATA_HORA_RESERVA)
         VALUES ('".$_POST["cliente1"]."','".$_POST["mesa1"]."','".$_POST["hora1"]."')";
-        mysqli_prepare($conn, $sql);
-        
+        $stmt = mysqli_prepare($conn, $sql);
+        $stmt->execute();
     }
 
             ?>
