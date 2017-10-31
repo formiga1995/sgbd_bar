@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href=""css\estiloproduto.css">
+    <link rel="stylesheet" type="text/css" href="css\estiloproduto.css">
     <title>Pub</title>
     <style>
         
@@ -22,23 +22,33 @@
     </script>
 </head>
 <body>
+    <?php
+    include 'conectar.php';
+    if(isset($_POST['adicionar'])){
+        $sql = "INSERT INTO produto (NOME, MARCA, PRECO, QNT_ESTOQUE, ID_TIPO_PRODUTO)
+        VALUES ('".$_POST["nomep"]."','".$_POST["marcap"]."','".$_POST["precop"]."','".$_POST["qte"]."','".$_POST["tipop"]."')";
+        $stmt = mysqli_prepare($conn, $sql);
+        $stmt->execute();
+    }
 
+    ?>
     <div class="ol" id="overlay">   </div>
-    <div class="add" style="" align="center">
+    <form class="add" method="post" style="" align="center">
         <button class="fecha" onclick="off()">X</button>
         <div class="infolay">Insira os dados do produto</div>
         <div class="line"></div>
-        <input class="insira" placeholder="Nome do Produto"></input>
-        <input class="insira" placeholder="Marca do Produto"></input>
-        <input class="insira" placeholder="Preço do Produto"></input>
-        <input class="insira" placeholder="Quantidade no Estoque"></input>
-        <select class="insira">
+        <input class="insira" name="nomep" placeholder="Nome do Produto"></input>
+        <input class="insira" name="marcap" placeholder="Marca do Produto"></input>
+        <input class="insira" name="precop" placeholder="Preço do Produto"></input>
+        <input class="insira" name="qte" placeholder="Quantidade no Estoque"></input>
+        <select class="insira" name="tipop">
                 <option value="" disabled selected hidden>Tipo do Produto...</option>
-                <option>Comida</option>
-                <option>Bebida</option>
+                <option value="2">Comida</option>
+                <option value="1">Bebida</option>
         </select>
-        <button class="confirma">Adicionar Produto</button>
-    </div>
+        <button class="confirma" type="submit" name="adicionar">Adicionar Produto</button>
+    </form>
+
     <div class="container">
     <div class="menu">
         <div>Produtos</div>
