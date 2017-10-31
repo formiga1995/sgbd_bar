@@ -5,7 +5,7 @@ body{
     
     margin: auto;
     margin-top: 50px;
-    width: 500px;
+    width: 800px;
     padding: 40px;
     border-radius: 4px;
     border-top: 20px solid #22cc77;
@@ -21,7 +21,7 @@ body{
     box-shadow: 1px 2px 5px 0px #666;
 }
 .menu{
-    width: 500px;
+    width: 800px;
     border-radius: 4px;
     text-align: center;
     color: #666;
@@ -58,12 +58,12 @@ body{
 .linha{
     margin-top: 40px;
     margin-left: -40px;
-    width: 580px;
+    width: 880px;
     height: 1px;
     background-color: #aeaeae;
 }
 table, th, td {
-    width: 500px;
+    width: 800px;
     padding: 8px;
     border: 0px;
     border-collapse: collapse;
@@ -205,7 +205,7 @@ button:focus:after {
     opacity:0.4;
     display: none;
 }
-.add{
+.add, .edit{
     z-index:1;
     position:fixed;
     right:0;left:0;

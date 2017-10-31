@@ -10,27 +10,28 @@
     
 </head>
 <body>
-
+<form method="POST" action="reservamesa.php">
     <div class="menu">
         <div   class="search">
-            <input class="entre" placeholder="ID_CLIENTE"></input>
+            <input name="cliente" class="entre" placeholder="ID_CLIENTE"></input>
         </div>
             <div   class="search">
-            <input class="entre" placeholder="ID_MESA"></input>
+            <input name="mesa" class="entre" placeholder="ID_MESA"></input>
         </div>
         <div   class="search">
-            <input class="entre" placeholder="DATA_HORA_RESERVA"></input>
+            <input name="hora" class="entre" placeholder="DATA_HORA_RESERVA"></input>
         </div>
         
-        
+        </form>
             
 <?php  //Isso aqui tá só pra dar o select, mas tem que alterar o html pra mostrar de acordo com o resultado da consulta
                     include 'conectar.php';
                 //$database = new $conn;
                 //$db = ;
-                $insere_reserva     =   "INSERT A.ID_CLIENTE,A.ID_MESA,A.DATA_HORA_RESERVA,B.ID_CLIENTE,B.NOME 
-                                            FROM RESERVA A, CLIENTE B
-                                            WHERE A.ID_CLIENTE = B.ID_CLIENTE;";
+                 $cliente = $_POST["cliente"];
+                 $mesa = $_POST["mesa"];
+                 $hora = $_POST["hora"];   
+                $insere_reserva     =   "INSERT INTO RESERVA(ID_CLIENTE,ID_MESA,DATA_HORA_RESERVA) VALUES('$cliente','$mesa','$hora');";
                 //$resultado_consulta = mysqli_query($conn, $consulta_produto);
                $result = $conn->query($insere_reserva);
         if ($result->num_rows > 0) {
@@ -48,7 +49,7 @@
         }
         ?>
         </table>
-        <button class="item" onclick="window.location.href='\.html'">Reservar mesa</button><br>
+        <button class="item" onclick="window.location.href='\ssss.html'">Reservar mesa</button><br>
         <button class="item" onclick="window.location.href='\index.html'">Voltar</button>
 
     </div>
