@@ -61,7 +61,8 @@
 
     </div>
 </table>
-<button class="item" onclick="window.location.href='\index.html'">Voltar</button>
+<button class="item" onclick="window.location.href='\rrelatorios.php'">Voltar Relatorios</button>
+<button class="item" onclick="window.location.href='\index.html'">Voltar Menu</button>
             
     </body>
 </html>
