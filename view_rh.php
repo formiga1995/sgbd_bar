@@ -46,7 +46,7 @@
                 echo "<td>".$row["CPF"]."</td>";
                 echo "<td>".$row["TELEFONE"]."</td>";
                 echo "<td>".$row["CEP"]."</td>";
-                echo "<td>".$row["ENDEREÇO"]."</td>";
+                echo "<td>".$row["ENDERECO"]."</td>";
                 echo "<td>".$row["Cargo"]."</td>";
                 //echo "<td>".$row["TIPO"]."</td>";
                 echo "</tr>";

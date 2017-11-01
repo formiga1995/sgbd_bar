@@ -78,10 +78,10 @@
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>".$row["Garcom"]."</td>";
+                echo "<td>".$row["Garçom"]."</td>";
                 echo "<td>".$row["Cliente"]."</td>";
                 echo "<td>".$row["Mesa"]."</td>";
-                echo "<td>".$row["Numero da Comanda"]."</td>";
+                echo "<td>".$row["Número da Comanda"]."</td>";
                 echo "<td>".$row["Item da Compra"]."</td>";
                 echo "<td>".$row["Nome do Produto"]."</td>";
                 echo "<td>".$row["Marca do Produto"]."</td>";
@@ -180,7 +180,7 @@
                 echo "<td>".$row["CPF"]."</td>";
                 echo "<td>".$row["TELEFONE"]."</td>";
                 echo "<td>".$row["CEP"]."</td>";
-                echo "<td>".$row["ENDERECO"]."</td>";
+                echo "<td>".$row["ENDEREÇO"]."</td>";
                 echo "<td>".$row["Cargo"]."</td>";
                 echo "</tr>";
             }
