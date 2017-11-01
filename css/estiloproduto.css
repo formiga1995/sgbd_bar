@@ -205,7 +205,7 @@ button:focus:after {
     opacity:0.4;
     display: none;
 }
-.add, .edit{
+.add, .edit, .vcoz, .vgar, .vven, .vrh{
     z-index:1;
     position:fixed;
     right:0;left:0;
@@ -214,14 +214,21 @@ button:focus:after {
     margin-left: auto;
     padding: 20px;
     width:500px;
-    height:600px;
     border-radius: 4px;
     border-top: 20px solid #22cc77;
     background-color:#fdfdff;
     box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.5);
     opacity:1;
     transition: 0.3s;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     display: none;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
 }
 .line{
     margin-top: 20px;
