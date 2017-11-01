@@ -9,7 +9,55 @@
     <title>Funcionarios</title>
     
 </head>
+<script>
+        function on() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementsByClassName("add")[0].style.display = "block";
+        }
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementsByClassName("add")[0].style.display = "none";
+        }
+        function editon(numero) {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("ideia").value = numero;
+            document.getElementById("ideia").innerHTML = numero;
+            document.getElementsByClassName("edit")[0].style.display = "block";
+        }
+        function editoff() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementsByClassName("edit")[0].style.display = "none";
+        }
+    </script>
 <body>
+    <?php
+        include 'conectar.php';
+        if(isset($_POST['adicionar'])){
+        $sql = "INSERT INTO funcionario (ID_FUNCIONARIO, TELEFONE, NOME, CPF, ID_ENDERECO,ID_TIPO_FUNCIONARIO)
+        VALUES ('".$_POST["id"]."','".$_POST["tel"]."','".$_POST["nome"]."','".$_POST["cpf"]."','".$_POST["id2"]."','".$_POST["tipop"]."')";
+        $stmt = mysqli_prepare($conn, $sql);
+        $stmt->execute();
+    }
+    ?>
+    <div class="ol" id="overlay">   </div>
+    <form class="add" method="post" style="" align="center">
+        <button class="fecha" onclick="off()">X</button>
+        <div class="infolay">Insira os dados do funcionario</div>
+        <div class="line"></div>
+        <input class="insira" name="id" placeholder="ID"></input>
+        <input class="insira" name="nome" placeholder="Nome"></input>
+        <input class="insira" name="tel" placeholder="Telefone"></input>
+        <input class="insira" name="id2" placeholder="ID_ENDERECO"></input>
+        <input class="insira" name="cpf" placeholder="CPF"></input>
+        <select class="insira" name="tipop">
+                <option value="" disabled selected hidden>Ocupacao</option>
+                <option value="1">Garcom</option>
+                <option value="2">Chefe</option>
+                <option value="3">Caixa</option>
+                <option value="4">Cozinheiro</option>
+        </select>
+        <button class="confirma" type="submit" name="adicionar">Adicionar Funcionario</button>
+    </form>
 
 	<div class="menu">
         <div   class="search">
@@ -48,8 +96,10 @@
             echo "0 results";
         }
         ?>
+
+
 		</table>
-        <button class="item">Incluir Funcionario</button><br>
+        <button class="item" onclick="on()">Incluir Funcionario</button><br>
         <button class="item" onclick="window.location.href='\index.html'">Voltar</button>
 
     </div>
